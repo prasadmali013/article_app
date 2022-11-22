@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+.appTitle {
+    text-align: center;
+    /* margin-top: 0.8rem; */
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    position: fixed;
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainSection {
+    width: 75%;
+    margin-top: 3rem;
+    overflow-y: scroll;
+    height: 90vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mainSection::-webkit-scrollbar {
+    width: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.mainSection::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 10px;
+    /* background-color: aqua; */
+    background: rgb(244, 122, 34);
+    background: linear-gradient(90deg, rgba(244, 122, 34, 0.8435749299719888) 63%, rgba(232, 215, 13, 1) 91%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.sidebar {
+    background-color: white;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 5.5rem;
+    right: 2.5rem;
+    border-radius: 10px;
+}
+
+.sidebar>h3 {
+    padding: 1rem;
+    text-decoration: underline;
+}
+
+.sidebar>ul {
+    list-style-type: none;
+    padding: 0.5rem 1rem;
+}
+
+.sidebar>ul>li {
+    padding: 0.3rem;
+    color: purple;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sidebar>ul>li:hover {
+
+    color: rgb(86, 129, 108);
+
+}
+
+/* media query */
+
+@media only screen and (max-width: 700px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mainSection {
+        width: 90%;
+        height: auto;
+        overflow-y: hidden;
+    }
+
+    .sidebar {
+        position: static;
+        width: 90%;
+    }
 }
